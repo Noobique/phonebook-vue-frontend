@@ -24,7 +24,7 @@
                   <font-awesome-icon icon="cog" />
                 </template>
                 <b-dropdown-item
-                  @click="editContact(contact.id)"
+                  @click="editContact(index)"
                   >Edit contact</b-dropdown-item>
                 <b-dropdown-item
                   @click="deleteContact(contact.id)"
@@ -53,10 +53,10 @@ export default {
           this.contacts = response.data
         })
     },
-    deleteContact (contactId) {
-      this.axios.delete('/contact/' + contactId)
+    deleteContact (index) {
+      this.axios.delete('/contact/' + this.contacts[index].id)
         .then((response) => {
-          this.updateContacts()
+          this.$delete(this.contacts, index)
         })
     },
     editContact (contactId) {

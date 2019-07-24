@@ -49,12 +49,12 @@ export default {
       if (!this.id) {
         this.axios.post('/contact', {name: this.name})
           .then((response) => {
-            this.$router.push('Main')
+            this.$router.push('/')
           })
       } else {
         this.axios.put('/contact/' + this.id, {name: this.name})
           .then((response) => {
-            this.$router.push('Main')
+            this.$router.push('/')
           })
       }
     }

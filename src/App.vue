@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     searchContacts: function () {
-      this.$root.$emit('searchContactsEmitted', this.searchContactString);
+      this.$root.$emit('searchContactsEmitted', this.searchContactString)
     }
   }
 }
